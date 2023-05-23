@@ -4,8 +4,9 @@ function getComputerChoice() {
   console.log(`Computer choose ${randomRPS}`);
   return randomRPS;
 }
-const playerSelection = () =>
-  prompt("Enter your choice: rock, paper, or scissors", "");
+
+let playerScore = 0;
+let computerScore = 0;
 
 function playRound(playerSelection, computerSelection) {
   if (!playerSelection) return "You're not choose anything or spell it wrong";
@@ -50,8 +51,15 @@ function playRound(playerSelection, computerSelection) {
     console.log("You're not choose anything or spell it wrong");
   }
 }
-playRound(playerSelection(), getComputerChoice());
-playRound(playerSelection(), getComputerChoice());
-playRound(playerSelection(), getComputerChoice());
-playRound(playerSelection(), getComputerChoice());
-playRound(playerSelection(), getComputerChoice());
+
+const rpsContainer = document.querySelectorAll("div");
+
+rpsContainer.forEach((button) => {
+  button.addEventListener("click", (e) => {
+    playRound(e.target.id, getComputerChoice());
+  });
+});
+
+// function playroundTextResult(playerSelection, computerSelection) {
+//   return ;
+// }

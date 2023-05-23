@@ -1,0 +1,15 @@
+body {
+  text-align: center;
+}
+
+.score-name-container,
+.score-number-container,
+.choose-container {
+  display: flex;
+  justify-content: space-around;
+  border: 1px solid red;
+  width: 60%;
+  margin: 0 auto;
+  flex-wrap: wrap;
+  margin-bottom: 1rem;
+}
