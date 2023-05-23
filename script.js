@@ -14,9 +14,11 @@ function playRound(playerSelection, computerSelection) {
   const computerSelectionLowerCase = computerSelection.toLowerCase();
   if (playerSelectionLowerCase === "rock") {
     if (computerSelectionLowerCase === "paper") {
+      changeComputerScore();
       console.log("You Lose! Paper beats Rock");
       return "You Lose! Paper beats Rock";
     } else if (computerSelectionLowerCase === "scissors") {
+      changePlayerScore();
       console.log("You Win! Rock beats Scissors");
       return "You Win! Rock beats Scissors";
     } else {
@@ -60,6 +62,21 @@ rpsContainer.forEach((button) => {
   });
 });
 
-// function playroundTextResult(playerSelection, computerSelection) {
-//   return ;
-// }
+function changePlayerScore() {
+  const playerScorePath = document.querySelector(
+    "body > div.score-container > div.score-number-container > div:nth-child(1)"
+  );
+  playerScore += 1;
+  playerScorePath.textContent = playerScore;
+
+  return;
+}
+function changeComputerScore() {
+  const computerScorePath = document.querySelector(
+    "body > div.score-container > div.score-number-container > div:nth-child(2)"
+  );
+  computerScore += 1;
+  computerScorePath.textContent = computerScore;
+
+  return;
+}
