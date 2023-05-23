@@ -6,7 +6,7 @@ let countScore = 5;
 function getComputerChoice() {
   const rps = ["Rock", "Paper", "Scissors"];
   const randomRPS = rps[Math.floor(Math.random() * rps.length)];
-  console.log(`Computer choose ${randomRPS}`);
+  // console.log(`Computer choose ${randomRPS}`);
   computerSelection = randomRPS;
   return randomRPS;
 }
@@ -35,11 +35,11 @@ function playRound(playerSelection, computerSelection) {
   if (playerSelectionLowerCase === "paper") {
     if (computerSelectionLowerCase === "scissors") {
       showLoseResult(playerSelectionLowerCase, computerSelectionLowerCase);
-      console.log("You Lose! Scissors beats Paper");
+      // console.log("You Lose! Scissors beats Paper");
       return "You Lose! Scissors beats Paper";
     } else if (computerSelectionLowerCase === "rock") {
       showWinResult(playerSelectionLowerCase, computerSelectionLowerCase);
-      console.log("You Win! Paper beats Rock");
+      // console.log("You Win! Paper beats Rock");
       return "You Win! Paper beats Rock";
     } else {
       result.textContent = "Draw";
@@ -49,18 +49,18 @@ function playRound(playerSelection, computerSelection) {
   if (playerSelectionLowerCase === "scissors") {
     if (computerSelectionLowerCase === "rock") {
       showLoseResult(playerSelectionLowerCase, computerSelectionLowerCase);
-      console.log("You Lose! Rock beats Scissors");
+      // console.log("You Lose! Rock beats Scissors");
       return "You Lose! Rock beats Scissors";
     } else if (computerSelectionLowerCase === "paper") {
       showWinResult(playerSelectionLowerCase, computerSelectionLowerCase);
-      console.log("You Win! Scissors beats Paper");
+      // console.log("You Win! Scissors beats Paper");
       return "You Win! Scissors beats Paper";
     } else {
       result.textContent = "Draw";
       return "Draw";
     }
   } else {
-    console.log("You're not choose anything or spell it wrong");
+    // console.log("You're not choose anything or spell it wrong");
   }
 }
 
@@ -143,6 +143,7 @@ function reset() {
   result.textContent = "";
   playerChooseText = "";
   computerChooseText = "";
+  winnerText.textContent = "";
 }
 const resetBtn = document.querySelector("#reset");
 resetBtn.addEventListener("click", reset);
